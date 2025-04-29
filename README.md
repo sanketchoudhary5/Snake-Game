@@ -16,15 +16,6 @@ This game is developed using:
 
 * Audio Elements 🎵 – Adds sound effects for movement, food consumption, and game over scenarios.
 
-## 🙏 Acknowledgement
-A big thank you ❤️ to:
-
-Classic Snake Game Creators 🕹️ – For inspiring this modern version.
-
-JavaScript Developers & Open-Source Community 🌍 – For their valuable contributions.
-
-HTML & CSS Enthusiasts 🎨 – For making web-based games more engaging.
-
 ## 📌API
 
 Main APIs Used in the Snake Game
@@ -36,33 +27,33 @@ Main APIs Used in the Snake Game
 3️⃣ Audio API (new Audio()) – Plays sound effects for game actions.
 
 ## 👥 Contributing
-Want to make this Snake Game even better? 🚀 Follow these steps:
+Want to make this Snake Game even better?  Follow these steps:
 
 1️⃣ Fork the repository 🍴.
 
-2️⃣ Clone the project to your local machine 💻:
+2️⃣ Clone the project to your local machine:
 
 git clone https://github.com/your-username/snake-game.git
 
-3️⃣ Create a new branch (feature/your-feature-name) 🌿.
+3️⃣ Create a new branch (feature/your-feature-name).
 
-4️⃣ Add your improvements (e.g., new skins, power-ups, or levels) 🎨⚡.
+4️⃣ Add your improvements (e.g., new skins, power-ups, or levels).
 
-5️⃣ Push your changes and submit a pull request 🔄.
+5️⃣ Push your changes and submit a pull request.
 
 Your contributions are always welcome! 🎉
 ## 🛠️ Installation
 To play the game locally, follow these steps:
 
-1️⃣ Make sure you have a modern web browser installed 🖥️.
+1️⃣ Make sure you have a modern web browser installed.
 
-2️⃣ Download or clone the project repository 📥:
+2️⃣ Download or clone the project repository:
 
 git clone https://github.com/your-username/snake-game.git
 
-3️⃣ Open the project folder and run index.html in your browser 🌍.
+3️⃣ Open the project folder and run index.html in your browser.
 
-Now, you’re all set to play! 🎮🐍
+Now, you’re all set to play! 🎮
 ## 🚀 Deployment
 You can deploy this game on various platforms:
 
@@ -83,11 +74,11 @@ Your Own Web Server 🖥️ – Upload files to any hosting service.
 
 ✅ The snake moves using the Arrow Keys ⬆️⬇️⬅️➡️.
 
-✅ Eating food 🍏 increases the score 📈 and the snake's length.
+✅ Eating food increases the score and the snake's length.
 
-✅ The game ends when the snake hits a wall or collides with itself 💥.
+✅ The game ends when the snake hits a wall or collides with itself.
 
-✅ High scores are stored locally so you can track your progress 🏆.
+✅ High scores are stored locally so you can track your progress.
 
 ## 🔊 Sound Effects
 🎵 Background Music – Plays continuously during gameplay.
@@ -117,16 +108,16 @@ Your Own Web Server 🖥️ – Upload files to any hosting service.
 ## ❓FAQ
 
 🔹 Q: Can I change the game speed?
-A: Yes! You can modify the speed variable in the JavaScript file ⚙️.
+A: Yes! You can modify the speed variable in the JavaScript file.
 
 🔹 Q: Does the game work offline?
-A: Yes! Since it runs on HTML, CSS, and JavaScript, no internet connection is required 💻.
+A: Yes! Since it runs on HTML, CSS, and JavaScript, no internet connection is required.
 
 🔹 Q: How can I add obstacles or power-ups?
-A: You can modify the gameEngine() function to introduce new mechanics 🔥.
+A: You can modify the gameEngine() function to introduce new mechanics.
 
 🔹 Q: Can I customize the game’s design?
-A: Absolutely! Edit the CSS file to change the grid, colors, or animations 🎨.
+A: Absolutely! Edit the CSS file to change the grid, colors, or animations.
 
 
 ## 📜License
@@ -137,6 +128,6 @@ A: Absolutely! Edit the CSS file to change the grid, colors, or animations 🎨.
 
 💡 You are free to use, modify, and distribute it for personal or commercial purposes.
 
-By following this guide, you can install, modify, and deploy the Snake Game with ease! 🐍🎮
+By following this guide, you can install, modify, and deploy the Snake Game with ease!🎮
 
-🔥 Now go ahead and challenge yourself to beat the high score! 🚀🏆
+🔥 Now go ahead and challenge yourself to beat the high score!
