@@ -1,0 +1,205 @@
+let inputDir = { x: 0, y: 0 }; 
+    //Represents the current direction of the snake's movement. Initially, it's stationary.
+
+const foodSound = new Audio('music/food.mp3');
+const gameOverSound = new Audio('music/gameover.mp3');
+const moveSound = new Audio('music/move.mp3');
+const musicSound = new Audio('music/music.mp3');
+    //These constants load sound effects for the game:
+      foodSound: Plays when the snake eats food.
+      gameOverSound: Plays when the game ends.
+      moveSound: Plays when the snake changes direction.
+      musicSound: Background music for the game.
+
+
+let speed = 10;
+  //Controls how fast the game runs, i.e., how often the screen updates.
+
+
+let score = 0;
+  //Keeps track of the player's current score.
+
+
+let lastPaintTime = 0;
+  //Tracks the last time the game screen was updated.
+
+let snakeArr = [{ x: 13, y: 15 }];
+  //Array representing the snake. Each object in the array is a segment of the snake, with {x, y} coordinates.
+
+
+let food = { x: 6, y: 7 };
+  //Represents the current position of the food on the grid.
+
+
+function main(ctime) {
+  window.requestAnimationFrame(main);
+    //main is the primary game loop. It uses requestAnimationFrame to repeatedly call itself and update the game.
+
+if ((ctime - lastPaintTime) / 1000 < 1 / speed) {
+  return;
+}
+    //Ensures the game updates only when the required time interval (based on speed) has passed.
+
+
+lastPaintTime = ctime;
+  gameEngine();
+}
+    //Updates the lastPaintTime and calls the gameEngine to handle game logic.
+
+
+function isCollide(snake) {
+    //Checks if the snake has collided with itself or the wall.
+
+
+function isCollide(snake) {
+    //Checks if the snake has collided with itself or the wall.
+
+
+for (let i = 1; i < snake.length; i++) {
+  if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) return true;
+}
+    //Loops through the snake segments to check if any segment overlaps the head (collision with its)
+
+
+if (snake[0].x >= 18 || snake[0].x <= 0 || snake[0].y >= 18 || snake[0].y <= 0) return true;
+  return false;
+}
+    //Checks if the snake's head goes outside the grid (collision with walls).
+
+
+function gameEngine() {
+    //Core logic of the game.
+
+
+if (isCollide(snakeArr)) {
+    gameOverSound.play();
+    musicSound.pause();
+    alert('Game Over. Press any key to play again!');
+    inputDir = { x: 0, y: 0 };
+    snakeArr = [{ x: 13, y: 15 }];
+    musicSound.play();
+    score = 0;
+    scoreBox.innerHTML = 'Score: ' + score;
+    return;
+  }
+    //If a collision occurs:
+        Play the "game over" sound.
+        Pause the music.
+        Reset the game (alert the user, reset the snake, score, and direction).
+
+
+if (snakeArr[0].y === food.y && snakeArr[0].x === food.x) {
+    foodSound.play();
+    score += 1;
+      //Checks if the snake's head is at the same position as the food.
+      //Increments the score and plays the "food eaten" sound.
+
+
+
+if (score > hiscoreval) {
+      hiscoreval = score;
+      localStorage.setItem('hiscore', JSON.stringify(hiscoreval));
+      hiscoreBox.innerHTML = 'HiScore: ' + hiscoreval;
+    }
+      //Updates the high score in localStorage if the current score exceeds it.
+
+
+
+scoreBox.innerHTML = 'Score: ' + score;
+    snakeArr.unshift({ x: snakeArr[0].x + inputDir.x, y: snakeArr[0].y + inputDir.y });
+    food = { x: Math.round(2 + 14 * Math.random()), y: Math.round(2 + 14 * Math.random()) };
+  }
+    //Adds a new segment to the snake at the current direction.
+    //Randomly generates a new position for the food.
+
+
+
+for (let i = snakeArr.length - 2; i >= 0; i--) {
+    snakeArr[i + 1] = { ...snakeArr[i] };
+  }
+    //Shifts the positions of all snake segments to follow the head.
+
+
+
+snakeArr[0].x += inputDir.x;
+snakeArr[0].y += inputDir.y;
+    //Moves the snake's head in the current direction.
+
+
+board.innerHTML = '';
+    //Clears the game board before rendering the snake and food.
+
+
+snakeArr.forEach((e, index) => {
+    let snakeElement = document.createElement('div');
+    snakeElement.style.gridRowStart = e.y;
+    snakeElement.style.gridColumnStart = e.x;
+    snakeElement.classList.add(index === 0 ? 'head' : 'snake');
+    board.appendChild(snakeElement);
+  });
+      //Loops through the snake array to render each segment.
+
+
+
+  let foodElement = document.createElement('div');
+  foodElement.style.gridRowStart = food.y;
+  foodElement.style.gridColumnStart = food.x;
+  foodElement.classList.add('food');
+  board.appendChild(foodElement);
+}
+      //Renders the food at its current position.
+      //Game Initialization
+
+
+
+musicSound.play();
+      //Starts the background music when the game loads.
+
+
+
+let hiscore = localStorage.getItem('hiscore');
+let hiscoreval = hiscore === null ? 0 : JSON.parse(hiscore);
+hiscoreBox.innerHTML = 'HiScore: ' + hiscoreval;
+        //Loads the high score from localStorage or initializes it to 0 if not present.
+
+
+
+window.requestAnimationFrame(main);
+        //Starts the game loop.
+
+
+
+window.addEventListener('keydown', (e) => {
+  moveSound.play();
+  switch (e.key) {
+    case 'ArrowUp':
+      inputDir = { x: 0, y: -1 };
+      break;
+    case 'ArrowDown':
+      inputDir = { x: 0, y: 1 };
+      break;
+    case 'ArrowLeft':
+      inputDir = { x: -1, y: 0 };
+      break;
+    case 'ArrowRight':
+      inputDir = { x: 1, y: 0 };
+      break;
+  }
+});
+      //Handles keyboard inputs:
+      //Sets the direction of the snake based on the arrow keys.
+      //Plays a sound when a key is pressed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
